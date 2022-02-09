@@ -15,12 +15,12 @@ int main(void) {
     while (1) {
         char input;
         cout << "\n\033[94mИнициализация\033[0m: случайная\033[92m(r)\033[0m или вручную\033[92m(m)\033[0m? ";
-        input = getchar();
+        cin >> input;
 
         if (input == 'm') {                                     // m - manual
             for (int i = 0; i < SIZE; i++) {
                 printf("\033[0mВведите \033[95m%d\033[0m элемент массива: \033[91m", i);
-                scanf("%f", &arr[i]);
+                cin >> arr[i];
                 if (i == SIZE)
                     goto brk;                                   // break
             }
