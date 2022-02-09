@@ -8,36 +8,31 @@ int main(void) {
     // random seed
     srand(time(0));
 
-    const int SIZE = 10;                // размер массива - константа
+    const int SIZE = 10;                                        // размер массива - константа
 
-    float arr[SIZE];                    // создаем массив
+    float arr[SIZE];                                            // создаем массив
 
     while (1) {
         char input;
         cout << "\n\033[94mИнициализация\033[0m: случайная\033[92m(r)\033[0m или вручную\033[92m(m)\033[0m? ";
-        input = getchar();              // использовать getchar не обязательно, можно обойтись cin
-        
-        for (int i = 0; i < 45; i++) {  // эта непонятная конструкция просто выводит
-            printf("-");                // линию из черточек на экран. От этого куска
-        }                               // кода можно с легкостью избавиться, он тут
-        printf("\n");                   // (почти) не нужен, только для визуала.
+        input = getchar();
 
-        if (input == 'm') {             // m - manual
+        if (input == 'm') {                                     // m - manual
             for (int i = 0; i < SIZE; i++) {
                 printf("\033[0mВведите \033[95m%d\033[0m элемент массива: \033[91m", i);
-                scanf("%f", &arr[i]);   // scanf тоже можно заменить на cin
+                scanf("%f", &arr[i]);
                 if (i == SIZE)
-                    goto brk;           // break
+                    goto brk;                                   // break
             }
-        } else if (input == 'r') {      // r - random
+        } else if (input == 'r') {                              // r - random
             for (int i = 0; i < SIZE; i++) {
-                arr[i] = (float(rand())/float(RAND_MAX)) * 6.9; // я не знаю, как это работает. Но работает же!
+                arr[i] = (float(rand())/float(RAND_MAX)) * 6.9; // наполнение массива
                 if (i == SIZE)
-                    goto brk;           // break
+                    goto brk;                                   // break
             }
-        } else { continue; }            // смысл цикла был только в том, что плохой ввод можно вот так игнорировать
+        } else { continue; }                                    // игнорирование плохого ввода
 
-        brk: break;                     // да, я знаю, что goto не нужно использовать
+        brk: break;                                             // да, я знаю, что goto не нужно использовать
     }
 
     // вывод содержимого
