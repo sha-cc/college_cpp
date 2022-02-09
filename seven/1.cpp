@@ -1,8 +1,12 @@
 #include <iostream>
+#include <time.h>
 
 using namespace std;
 
 int main(void) {
+
+    // random seed
+    srand(time(0));
 
     const int SIZE = 10;                // размер массива - константа
 
@@ -33,7 +37,7 @@ int main(void) {
             }
         } else { continue; }            // смысл цикла был только в том, что плохой ввод можно вот так игнорировать
 
-        brk: break;                     // и да, я знаю, что goto не надо использовать. Cry about it lol
+        brk: break;                     // да, я знаю, что goto не нужно использовать
     }
 
     // вывод содержимого
