@@ -1,2 +1,4 @@
-# ignore all .out files
 *.out
+*.code-workspace
+
+.vscode
