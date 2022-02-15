@@ -17,22 +17,17 @@ int main(void) {
         cout << "\n\033[94mИнициализация\033[0m: случайная\033[92m(r)\033[0m или вручную\033[92m(m)\033[0m? ";
         cin >> input;
 
-        if (input == 'm') {                                     // m - manual
+        if (input == 'm') {
             for (int i = 0; i < SIZE; i++) {
-                printf("\033[0mВведите \033[95m%d\033[0m элемент массива: \033[91m", i);
+                cout << "Введите " << i << " элемент массива: ";
                 cin >> arr[i];
-                if (i == SIZE)
-                    goto brk;                                   // break
             }
-        } else if (input == 'r') {                              // r - random
+        } else if (input == 'r') {
             for (int i = 0; i < SIZE; i++) {
-                arr[i] = (float(rand())/float(RAND_MAX)) * 6.9; // наполнение массива
-                if (i == SIZE)
-                    goto brk;                                   // break
+                arr[i] = (float(rand())/float(RAND_MAX)) * 6.9;
             }
-        } else { continue; }                                    // игнорирование плохого ввода
-
-        brk: break;                                             // да, я знаю, что goto не нужно использовать
+        } else { continue; }
+        break;
     }
 
     // вывод содержимого

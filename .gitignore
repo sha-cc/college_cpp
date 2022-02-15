@@ -1,4 +1,5 @@
 *.out
 *.code-workspace
+*.swp
 
 .vscode
