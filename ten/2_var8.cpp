@@ -38,4 +38,9 @@ int main(void) {
         printf("-");
     printf("\033[0m\n");
 
+
+
+
+    printf("\n");
+
 }
