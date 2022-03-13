@@ -18,22 +18,19 @@ int main(void) {
 
     // создаем случайный массив с SIZE элементами и разбросом [-10; +10]
     int arr[SIZE];
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
         arr[i] = rand() % 21 - 10;
-    }
 
     // выводим получившийся массив
     cout << "\nМассив arr[" << SIZE << "] из случайных элементов:\n";
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
         cout << "{" << arr[i] << "} ";
-    }
     printf("\n\n");
 
     int last = -1;
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
         if (abs(arr[i]) <= 1)
             last = i;
-    }
 
     if (last == -1) {
         cout << "В массиве нет элементов, по модулю не превосходящих 1\n";
@@ -50,8 +47,7 @@ int main(void) {
 
     // выводим получившийся массив
     cout << "\nМассив arr[" << SIZE << "] из случайных элементов:\n";
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
         cout << "{" << arr[i] << "} ";
-    }
     printf("\n\n");
 }
