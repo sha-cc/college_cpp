@@ -1,5 +1,5 @@
 # Лабораторная работа 8
-![shield_license](https://img.shields.io/badge/license-GPLv2-brightgreen)
+![shield_license](https://img.shields.io/github/license/sha-cc/college_cpp)
 ![shield_language](https://img.shields.io/badge/language-C%2B%2B-blue)
 ## Задание 1
 _Создать массив из 10 элементов. Размерность массива задать именованной константой. Каждый элемент массива – действительное число с тремя знаками после запятой. Предусмотреть случайную инициализацию элементов массива и инициализацию вручную._

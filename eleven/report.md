@@ -1,5 +1,5 @@
 # Лабораторная работа 11
-![shield_license](https://img.shields.io/badge/license-GPLv2-brightgreen)
+![shield_license](https://img.shields.io/github/license/sha-cc/college_cpp)
 ![shield_language](https://img.shields.io/badge/language-C%2B%2B-blue)
 ## Задание 1
 _Создать одномерный динамический массив. Размер массива вводится с клавиатуры. Заполнить массив случайно целыми числами из промежутка `[–20, 20]`. Предусмотреть ручной ввод элементов массива._
@@ -8,6 +8,8 @@ _Создать одномерный динамический массив. Ра
 **Решение:**
 
 ![1](pic/1.png)
+![2](pic/2.png)
+
 ```cpp
 #include <iostream>
 #include <stdlib.h>
@@ -62,7 +64,6 @@ int main(void) {
 
 _Из полученного в задании 1 массива удалить нечетные элементы._
 
-![2](pic/2.png)
 ![3](pic/3.png)
 
 

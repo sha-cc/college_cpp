@@ -3,12 +3,11 @@
 
 using namespace std;
 
-/* Вывести элементы двумерного массива из левого нижнего угла 
-против часовой стрелки по спирали. */
+/* Вывести элементы двумерного массива из левого нижнего угла против часовой стрелки по спирали. */
 
 int main(void) {
 
-    // random seed
+    // случайное число для rand()
     srand(time(0));
 
     // размер массива - константы
@@ -39,71 +38,56 @@ int main(void) {
     printf("\033[0m\n");
 
 
-    // https://www.geeksforgeeks.org/print-given-matrix-counter-clock-wise-spiral-form/
-
-    int k = 5, l = 0;
-    int m = arrX, n = arrY;
- 
-    //  k - starting row index
-    //    m - ending row index
-    //    l - starting column index
-    //    n - ending column index
- 
-    // initialize the count
-    int cnt = 0;
- 
-    // total number of
-    // elements in matrix
+    // https://www.codespeedy.com/print-a-matrix-in-counter-clockwise-spiral-in-cpp/
+    int count = 0;
     int total = arrX * arrY;
 
-    while (l < n) {
-        if (cnt == total)
-            break;
- 
-        // Print the first column
-        // from the remaining columns
-        for (int i = k; i < m; ++i) {
-            cout << arr[i][l] << " ";
-            cnt++;
-        }
-        l++;
- 
-        if (cnt == total)
-            break;
- 
-        // Print the last row from
-        // the remaining rows
-        for (int i = l; i < n; ++i) {
-            cout << arr[m - 1][i] << " ";
-            cnt++;
-        }
-        m--;
- 
-        if (cnt == total)
-            break;
- 
-        // Print the last column
-        // from the remaining columns
-        if (k < m) {
-            for (int i = m - 1; i >= k; --i) {
-                cout << arr[i][n - 1] << " ";
-                cnt++;
-            }
-            n--;
-        }
- 
-        if (cnt == total)
-            break;
+    int i, a = 0, b = 0, c = arrX, d = arrY;
+    
+    while (1) {
+        // Print the last row from the remaining rows  
+        for (i = b; i < d; ++i) { 
+            cout << arr[c - 1][i] << " "; 
+            count++; 
+        } 
+        c--; 
+  
+        if (count == total) 
+            break; 
 
-        // Print the first row
-        // from the remaining rows
-        if (l < n) {
-            for (int i = n - 1; i >= l; --i) {
-                cout << arr[k][i] << " ";
-                cnt++;
-            }
-            k++;
+        // Print the last column from the remaining columns  
+        if (a < c) { 
+            for (i = c - 1; i >= a; --i) { 
+                cout << arr[i][d - 1] << " "; 
+                count++; 
+            } 
+            d--; 
         }
+
+        if (count == total) 
+            break; 
+
+        // Print the first row  from the remaining rows  
+        if (b < d) { 
+            for (i = d - 1; i >= b; --i) { 
+                cout << arr[a][i] << " "; 
+                count++; 
+            } 
+            a++; 
+        }
+        
+        if (count == total) 
+            break;
+  
+        // Print first column from remaining
+        for (i = a; i < c; ++i) { 
+            cout << arr[i][b] << " "; 
+            count++; 
+        } 
+        b++;  
+
+        if (count == total) 
+            break; 
     }
 
     printf("\n");
