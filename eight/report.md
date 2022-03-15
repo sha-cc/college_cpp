@@ -19,9 +19,9 @@ int main(void) {
     // random seed
     srand(time(0));
 
-    const int SIZE = 10;   // размер массива - константа
+    const int SIZE = 10;                                        // размер массива - константа
 
-    float arr[SIZE];
+    float arr[SIZE];                                            // создаем массив
 
     while (1) {
         char input;
@@ -34,18 +34,16 @@ int main(void) {
                 cin >> arr[i];
             }
         } else if (input == 'r') {
-            for (int i = 0; i < SIZE; i++) {
+            for (int i = 0; i < SIZE; i++)
                 arr[i] = (float(rand())/float(RAND_MAX)) * 6.9;
-            }
         } else { continue; }
         break;
     }
 
     // вывод содержимого
     printf("\n\033[0;1mМассив \033[1;34marr\033[0;1m:\033[0m\n\n");
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
         printf("\033[94marr[\033[0;91m%d\033[0;94m]\033[0m = %.3f\n", i, arr[i]);
-    }
 }
 
 ```
@@ -78,26 +76,22 @@ int main(void) {
 
     // создаем случайный массив с SIZE элементами и разбросом [-10; +10]
     int arr[SIZE];
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
         arr[i] = rand() % 21 - 10;
-    }
 
     // выводим получившийся массив
     cout << "\n\033[94mМассив \033[92marr[\033[94m" << SIZE << "\033[92m]\033[94m из случайных элементов:\033[0m\n";
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
         cout << "\033[92m{\033[0m" << arr[i] << "\033[92m}\033[0m ";
-    }
     printf("\n\n");
 
-    
     // ищем первый нулевой элемент
     int first_null = -1;
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
         if (arr[i] == 0) {
             first_null = i;
             break;
         }
-    }
     if (first_null == -1) {
         cout << "\033[1;33mВ массиве нет нулевых элементов\033[0m\n";
         return 0;
@@ -107,15 +101,13 @@ int main(void) {
     arr[first_null] = first_null;
 
     // пузырьковая сортировка
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < (SIZE - 1); j++) {
+    for (int i = 0; i < SIZE; i++)
+        for (int j = 0; j < (SIZE - 1); j++)
             if (arr[j] == first_null) {
                     int tmp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = tmp; 
             }
-        }
-    }
 
     // выводим получившийся массив
     cout << "\n\033[94mПолучившийся массив \033[92marr[\033[94m" << SIZE << "\033[92m]\033[94m:\033[0m\n";
@@ -159,19 +151,17 @@ int main(void) {
 
     // создаем случайный массив с SIZE элементами и разбросом [-10; +10]
     int arr[SIZE];
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
         arr[i] = rand() % 21 - 10;
-    }
 
     // выводим получившийся массив
     cout << "\n\033[94mМассив \033[92marr[\033[94m" << SIZE << "\033[92m]\033[94m из случайных элементов:\033[0m\n";
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
         cout << "\033[92m{\033[0m" << arr[i] << "\033[92m}\033[0m ";
-    }
     printf("\n\n");
 
     // сортировка выбором
-    for (int i = SIZE - 1; i >= 0; i--) {
+    for (int i = SIZE - 1; i >= 0; i--)
         if (arr[i] < 0) {
             int temp = i;
             int max = arr[i];
@@ -185,16 +175,14 @@ int main(void) {
                 }          
             }
         }
-    }
 
     // узнаем последний положительный элемент в получившемся массиве
     int last_positive = 0;
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
         if (arr[i] < 0) {
             last_positive = i - 1;
             break;
         }
-    } 
 
     // если все элементы массива - положительные числа, то сортируем весь массив
     if (last_positive == 0)
@@ -202,15 +190,13 @@ int main(void) {
 
     // пузырьковая сортировка положительных элементов по возрастанию
     int temp;
-    for (int i = 0; i <= last_positive; i++) {
-        for (int j = 0; j < last_positive; j++) {
+    for (int i = 0; i <= last_positive; i++)
+        for (int j = 0; j < last_positive; j++)
             if (arr[j] > arr[j + 1]) {
                 temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
             }
-        }
-    }
 
     // выводим получившийся массив
     cout << "\n\033[94mПолучившийся массив \033[92marr[\033[94m" << SIZE << "\033[92m]\033[94m:\033[0m\n";
