@@ -30,7 +30,7 @@ int main(void) {
 
         if (input == 'm') {
             for (int i = 0; i < SIZE; i++) {
-                cout << "Введите " << i << " элемент массива: ";
+                cout << "\033[0mВведите \033[95m" << i << "\033[0m элемент массива: \033[91m";
                 cin >> arr[i];
             }
         } else if (input == 'r') {
