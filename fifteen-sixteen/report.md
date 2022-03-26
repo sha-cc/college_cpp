@@ -1,4 +1,4 @@
-# Лабораторная работа 17-18
+# Лабораторная работа 15-16
 ![shield_license](https://img.shields.io/github/license/sha-cc/college_cpp)
 ![shield_language](https://img.shields.io/badge/language-C%2B%2B-blue)
 ## Задание 1
