@@ -3,12 +3,13 @@
  
 using namespace std;
 
+/* Найти максимальную цифру целого неотрицательного числа и её позицию в этом числе */
+
 void maxDigit(long int number);
 
 int main() {
     long int number;
-    cout << "Number: ";
-    cin >> number;
+    cout << "Number: "; cin >> number;
     maxDigit(number);
 }
 

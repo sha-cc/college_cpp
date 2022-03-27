@@ -2,17 +2,18 @@
 
 using namespace std;
 
-void sequence(int n);
+int sequence(int A0, int A1, int n);
 
 int main(void) {
-    int n;
-    cout << "n = ";
-    cin >> n;
-    sequence(n);
+    int A0, A1, n;
+    cout << "A0 = "; cin >> A0;
+    cout << "A1 = "; cin >> A1;
+    cout << "n = "; cin >> n; 
+    cout << "The " << n << "th term of the sequence is " << sequence(A0, A1, n) << endl;
 }
 
-// An = -An-1 * An-2
+// A(n) = -A(n-1) * A(n-2)
 
-void sequence(int n) {
-    
+int sequence(int A0, int A1, int n) {
+
 }

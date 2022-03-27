@@ -2,6 +2,8 @@
 
 using namespace std;
 
+/* Вывести цифры числа, начиная со старшего разряда */
+
 void reverse(int number);
 
 int main(void) {
