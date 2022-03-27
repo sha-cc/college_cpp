@@ -244,7 +244,7 @@ int main(void) {
     cout << "one = "; cin >> one;
     cout << "two = "; cin >> two;
     swap(&one, &two);
-    cout << "Now one = " << one << " and " << "two = " << two << endl;
+    cout << "Now one = " << one << " and two = " << two << endl;
 }
 
 int swap(int *one, int *two) {
