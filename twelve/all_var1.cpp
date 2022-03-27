@@ -78,15 +78,22 @@ int main(void) {
     int minNumber = 0;                  // столбец с минимальным элементом
 
     // поиск максимального отрицательного элемента
+    double maxNegNum = -100.0;   // tbd
     for (int i = 0; i < m; i++)
         for (int j = 0; j < n; j++)
-            if (arr[i][j] < 0 && arr[i][j] > arr[i][columnWithMaxNegNum])
+            if (arr[i][j] < 0 && arr[i][j] > maxNegNum) {
                 columnWithMaxNegNum = j;
+                maxNegNum = arr[i][j]; 
+            }    
     
     // поиск минимального элемента
+    double minN=100.0;
     for (int i = 0; i < m; i++)
         for (int j = 0; j < n; j++)
-            if (arr[i][j] < arr[i][minNumber]) minNumber = j;
+            if (arr[i][j] < minN) {
+                minNumber = j;
+                minN = arr[i][j];
+            }
 
 
     cout << "\n\033[92mСтолбец с максимальным отрицательным элементом: \033[94m" << columnWithMaxNegNum << endl;
