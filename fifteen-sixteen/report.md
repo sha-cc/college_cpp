@@ -28,6 +28,9 @@ void maximum(int one, int two) {
 ```
 
 ## Задание 2
+
+![2](pic/2.png)
+
 ```cpp
 #include <iostream>
 
@@ -81,6 +84,9 @@ void sum(int m, int n) {
 
 
 ## Задание 4
+
+![4](pic/4.png)
+
 ```cpp
 #include <iostream>
 
@@ -108,6 +114,9 @@ void reverse(int number) {
 
 
 ## Задание 5
+
+![5](pic/5.png)
+
 ```cpp
 #include <iostream>
 
@@ -135,6 +144,9 @@ void sum(int number) {
 
 
 ## Задание 6
+
+![6](pic/6.png)
+
 ```cpp
 #include <iostream>
 
@@ -166,6 +178,9 @@ void discriminator9000(int m, int n) {
 
 
 ## Задание 7
+
+![7](pic/7.png)
+
 ```cpp
 #include <iostream>
 

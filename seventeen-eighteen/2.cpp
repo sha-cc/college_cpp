@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -7,22 +6,20 @@ int digitalRoot(long a);
 
 int main() {
     int number;
-    cout << "Number: ";
-    cin >> number;
+    cout << "Number: "; cin >> number;
     digitalRoot(number);
-    return 0;
 }
 
 int digitalRoot(long number) {
     int result;
-    int length = to_string(number).length();
-    if (length == 1) {
+    if (number < 10) {
         cout << "Digital root: " << result << endl;
-        return 0;
+    } else {
+        while (number != 0) {
+            result += number % 10;
+            number /= 10;
+        }
+        digitalRoot(result);
     }
-    for (int i = 0; i < length; i++) {
-        result += (number % 10);
-        number /= 10;
-    }
-    digitalRoot(result);
+    return 0;
 }

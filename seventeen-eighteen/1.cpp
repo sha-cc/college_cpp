@@ -5,7 +5,9 @@ using namespace std;
 void reverse(int number);
 
 int main(void) {
-    reverse(16543);
+    int number;
+    cout << "Number = "; cin >> number;
+    reverse(number);
 }
 
 void reverse(int number) {
