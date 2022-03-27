@@ -80,13 +80,13 @@ int main(void) {
     // поиск максимального отрицательного элемента
     for (int i = 0; i < m; i++)
         for (int j = 0; j < n; j++)
-            if (arr[i][j] < 0 && arr[i][j] > arr[columnWithMaxNegNum][j])
-                columnWithMaxNegNum = i;
+            if (arr[i][j] < 0 && arr[i][j] > arr[i][columnWithMaxNegNum])
+                columnWithMaxNegNum = j;
     
     // поиск минимального элемента
     for (int i = 0; i < m; i++)
         for (int j = 0; j < n; j++)
-            if (arr[i][j] < arr[minNumber][j]) minNumber = i;
+            if (arr[i][j] < arr[i][minNumber]) minNumber = j;
 
 
     cout << "\n\033[92mСтолбец с максимальным отрицательным элементом: \033[94m" << columnWithMaxNegNum << endl;
