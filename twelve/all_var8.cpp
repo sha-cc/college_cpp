@@ -33,30 +33,30 @@ int main(void) {
 
 
     // массив для положительных элементов строк
-    int *positiveElements = (int*) malloc(m * sizeof(int));
+    int *sumOfAbsolutes = (int*) malloc(m * sizeof(int));
 
     // инициализация массива нулями
     for (int i = 0; i < m; i++)
-        positiveElements[i] = 0;
+        sumOfAbsolutes[i] = 0;
 
     // подсчет количества положительных элементов строк
     for (int i = 0; i < m; i++)
         for (int j = 0; j < n; j++)
-            if (arr[i][j] > 0) positiveElements[i]++;
+            if (arr[i][j] > 0) sumOfAbsolutes[i]++;
 
     // вывод
     cout << "\n\033[92mКоличество положительных элементов в строках:" << endl;
     for (int i = 0; i < m; i++) 
-        cout << "\033[92m" << i << ": \033[94m"<< positiveElements[i] << "\t";
+        cout << "\033[92m" << i << ": \033[94m"<< sumOfAbsolutes[i] << "\t";
     cout << "\n\n";
 
     // сортировка
     for (int i = 0; i < (m - 1); i++)
         for (int j = i; j < m; j++)
-            if (positiveElements[i] > positiveElements[j]) {
-                double tmp = positiveElements[i];
-                positiveElements[i] = positiveElements[j];
-                positiveElements[j] = tmp;
+            if (sumOfAbsolutes[i] > sumOfAbsolutes[j]) {
+                double tmp = sumOfAbsolutes[i];
+                sumOfAbsolutes[i] = sumOfAbsolutes[j];
+                sumOfAbsolutes[j] = tmp;
 
                 double *tmp2 = arr[i];
                 arr[i] = arr[j];
@@ -121,7 +121,7 @@ int main(void) {
     }
 
     // очистка памяти
-    free(positiveElements);
+    free(sumOfAbsolutes);
     for (int i = 0; i < n; i++)
         free(arr[i]);
     free(arr);
