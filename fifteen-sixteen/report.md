@@ -19,7 +19,7 @@ int main(void) {
 }
 
 void maximum(int one, int two) {
-    if (one == two) cout << "Same numbers";
+    if (one == two) cout << "Same numbers" << endl;
     else {
         int maximum = one > two? one: two;
         cout << "Maximum: " << maximum << endl;
