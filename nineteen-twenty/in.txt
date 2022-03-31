@@ -1,5 +1,0 @@
-123
-example text
-456
-some more text
-789
