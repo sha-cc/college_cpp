@@ -42,25 +42,26 @@ int main(void) {
     printf("\n\n");
 
 
-
     /* Удалить элементы, стоящие между первым и последним положительными элементами */
+
+    // переменная firstPositive не должна быть равно числу, входящему в промежуток от 0 до size
     int firstPositive = -1, lastPositive;
     
     for (int i = 0; i < size; i++) {
-        if (arr[i] > 0 && firstPositive == -1)
-            firstPositive = i;
-        else if (arr[i] > 0)
-            lastPositive = i;
+        if (arr[i] > 0 && firstPositive == -1)  // если элемент > 0 и первый положительный элемент все еще не найден
+            firstPositive = i;                  // то записываем индекс первого положительного элемента
+        else if (arr[i] > 0)                    // иначе, если элемент > 0
+            lastPositive = i;                   // то записываем его индекс (будет меняться несколько раз)
     }
 
-    /* Если последний положительный элемент - последний в массиве,
-    то эта конструкция почему-то забывает его учесть в ответе. Исправить */
-    for (int i = 0; i < (size - lastPositive); i++)
+    for (int i = 0; i < (size - lastPositive); i++) // от 0 до количества элементов между первым и последним положительными
+        // перемещаем посл. положительный элемент и все, стоящие за ним, на места сразу после первого положительного
         arr[firstPositive + i + 1] = arr[lastPositive + i];
 
-    size = (size - lastPositive) + (size - (size - firstPositive));
+    // назначение нового размера массива (если не делать +1, то последний элемент не войдет в новый массив)
+    size = (size - lastPositive) + (size - (size - firstPositive)) + 1;
 
-    arr = (int*) realloc(arr, size * sizeof(int));
+    arr = (int*) realloc(arr, size * sizeof(int));  // перераспределение памяти с realloc
 
     // вывод массива
     printf("Массив arr[%d], удалены элементы, стоящие между первым\nи последним положительными элементами:\n", size);
