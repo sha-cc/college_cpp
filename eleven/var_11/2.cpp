@@ -53,6 +53,8 @@ int main(void) {
             lastPositive = i;
     }
 
+    /* Если последний положительный элемент - последний в массиве,
+    то эта конструкция почему-то забывает его учесть в ответе. Исправить */
     for (int i = 0; i < (size - lastPositive); i++)
         arr[firstPositive + i + 1] = arr[lastPositive + i];
 
