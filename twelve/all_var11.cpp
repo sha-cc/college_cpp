@@ -37,7 +37,7 @@ int main(void) {
     int *arrOfNegatives = (int*) (malloc(m * sizeof(int)));
 
     for (int i = 0; i < m; i++)
-        arrOfNegatives[i] = -1;          // заполнение массива (если в строке нет отрицательных элементов, i = -1)
+        arrOfNegatives[i] = -1;         // заполнение массива (если в строке нет отрицательных элементов, i = -1)
 
     for (int i = 0; i < m; i++)
         for (int j = 0; j < n; j++) {
@@ -49,8 +49,13 @@ int main(void) {
 
     // вывод
     cout << "\nИндексы первых отрицательных элементов в строках:" << endl;
-    for (int i = 0; i < m; i++)
+    for (int i = 0; i < m; i++) {
+        if (arrOfNegatives[i] == -1) {
+            cout << "(нет) ";
+            continue;
+        }
         cout << arrOfNegatives[i] << " ";
+    }
     cout << endl;
 
     // пузырьковая сортировка
