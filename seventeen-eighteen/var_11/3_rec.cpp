@@ -20,7 +20,7 @@ int maxDigit (long int number) {
         cout << "\nмаксимальная цифра - " << max << ", её позиция - " << positionMax << endl;
         return 0;
     }
-    else if (number % 10 > max) {
+    else if (number % 10 >= max) {
         max = number % 10;
         positionMax = position;
     }
